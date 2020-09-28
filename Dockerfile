@@ -32,6 +32,9 @@ RUN pecl install xdebug-2.8.1 \
 RUN docker-php-ext-configure intl \
   && docker-php-ext-install intl
 
+### Install MySQL ###
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+
 ### Install Composer ###
 RUN set -eux; \
   curl --silent --fail --location --retry 3 --output /tmp/installer.php --url https://raw.githubusercontent.com/composer/getcomposer.org/cb19f2aa3aeaa2006c0cd69a7ef011eb31463067/web/installer; \
