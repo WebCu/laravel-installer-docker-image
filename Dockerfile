@@ -56,4 +56,4 @@ RUN composer global require laravel/installer \
 && echo 'export PATH=/root/.composer/vendor/bin:$PATH' >> ~/.bashrc
 
 
-EXPOSE 80 443
+EXPOSE 80 443 9005 9000
