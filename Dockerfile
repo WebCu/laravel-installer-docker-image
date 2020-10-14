@@ -1,7 +1,6 @@
 FROM php:7.4-cli
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
-COPY ./php/custom.ini /usr/local/etc/php/conf.d/php-custom.ini
 
 ### Install components ###
 RUN apt-get update -y && apt-get install -y \
@@ -55,5 +54,4 @@ RUN set -eux; \
 RUN composer global require laravel/installer \
 && echo 'export PATH=/root/.composer/vendor/bin:$PATH' >> ~/.bashrc
 
-
-EXPOSE 80 443 9005 9000
+EXPOSE 80 443
